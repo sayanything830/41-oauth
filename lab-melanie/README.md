@@ -27,4 +27,11 @@ MONGODB_URI='mongodb://localhost/personality'
 CLIENT_URL='http://localhost:8080'
 API_URL='http://localhost:3000'
 APP_SECRET=SEEKRET
+
+
+frontend:
+.dev.env file:
+
+NODE_ENV=dev
+API_URL="http://localhost:3000"
 ```
