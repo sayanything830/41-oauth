@@ -1,0 +1,72 @@
+{
+  "name": "personality-paragrapher",
+  "version": "0.0.0",
+  "description": "Personality Paragrapher for Mid Term Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:watch": "nodemon index.js",
+    "start:debug": "DEBUG=http* nodemon index.js",
+    "test": "jest -i",
+    "test:watch": "jest -i --watchAll",
+    "test:debug": "DEBUG=http* jest -i",
+    "lint": "eslint .",
+    "lint:test": "npm run lint && npm test",
+    "start-db": "mkdir -p ./data/db && mongod --dbpath ./data/db",
+    "stop-db": "killall mongod"
+  },
+  "jest": {
+    "setupFiles": [
+      "./__test__/lib/jest-setup.js"
+    ],
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coveragePathIgnorePatterns": [
+      "/__test__/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.0",
+    "eslint": "^4.17.0",
+    "faker": "^4.1.0",
+    "jest": "^22.2.2",
+    "superagent": "^3.8.2"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "del": "^3.0.0",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.1",
+    "lyrics-fetcher": "^1.0.2",
+    "mongoose": "^5.0.4",
+    "multer": "^1.3.0",
+    "watson-developer-cloud": "^3.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PersonalityParagrapher/PersonalityParagrapherBackend.git"
+  },
+  "keywords": [
+    "watson",
+    "lyrics",
+    "personality-profiles"
+  ],
+  "author": "Daniel Logerstedt, Melanie Downing, Steve Carpenter, Yohanes Demissie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PersonalityParagrapher/PersonalityParagrapherBackend/issues"
+  },
+  "homepage": "https://github.com/PersonalityParagrapher/PersonalityParagrapherBackend#readme"
+}
